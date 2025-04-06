@@ -89,7 +89,7 @@ const Topbar = (props) => {
     email: loginData?.body.email,
     gender: loginData?.body.gender,
     address: loginData?.body.address,
-    user: loginData?.body.userType,
+    user: loginData?.body?.userType,
     acctStatus: loginData?.body.acctStatus
   };
 

@@ -37,7 +37,7 @@ const RequestForm = () => {
 
   const getRequestForms = async () => {
     let data;
-    if (loginData && loginData?.body.userType !== "STUDENT") {
+    if (loginData && loginData?.body?.userType !== "STUDENT") {
       data = await fetch('/api/requests/all', {
         method: "GET",
         headers: {
@@ -375,7 +375,7 @@ const RequestForm = () => {
     <Box m="20px">
       <ToastContainer />
       <Header title="REQUEST FORM" subtitle="Create a New Request Form" />
-      {loginData?.body.userType === "STUDENT" ? (
+      {loginData?.body?.userType === "STUDENT" ? (
         <>
           <Button
             sx={{

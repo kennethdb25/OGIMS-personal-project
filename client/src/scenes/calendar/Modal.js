@@ -75,7 +75,7 @@ export const ViewDetailsMOdal = (props) => {
           setViewDetailsData();
         }}
         footer={[
-          loginData && loginData?.body.userType !== "STUDENT" && viewDetailsData && viewDetailsData.appointmentStatus === "PENDING" ? (
+          loginData && loginData?.body?.userType !== "STUDENT" && viewDetailsData && viewDetailsData.appointmentStatus === "PENDING" ? (
             <Button
               type="primary"
               icon={<CheckCircleOutlined />}
@@ -87,7 +87,7 @@ export const ViewDetailsMOdal = (props) => {
               APPROVE
             </Button>
           ) : null,
-          loginData && loginData?.body.userType !== "STUDENT" && viewDetailsData && viewDetailsData.appointmentStatus === "PENDING" ? (
+          loginData && loginData?.body?.userType !== "STUDENT" && viewDetailsData && viewDetailsData.appointmentStatus === "PENDING" ? (
             <Button
               type="primary"
               danger
@@ -100,7 +100,7 @@ export const ViewDetailsMOdal = (props) => {
               REJECT
             </Button>
           ) : null,
-          loginData && loginData?.body.userType === "STUDENT" && viewDetailsData.appointmentStatus === "PENDING" ? (
+          loginData && loginData?.body?.userType === "STUDENT" && viewDetailsData.appointmentStatus === "PENDING" ? (
             <Button
               type="primary"
               danger

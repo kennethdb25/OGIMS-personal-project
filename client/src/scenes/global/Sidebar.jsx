@@ -125,7 +125,7 @@ const Sidebar = (props) => {
               selected={selected}
               setSelected={setSelected}
             />
-            {loginData?.body.userType !== 'STUDENT' ? (
+            {loginData?.body?.userType !== 'STUDENT' ? (
               <>
                 <Typography
                   variant="h6"
@@ -179,7 +179,7 @@ const Sidebar = (props) => {
               selected={selected}
               setSelected={setSelected}
             />
-            {loginData?.body.userType !== 'STUDENT' ? (
+            {loginData?.body?.userType !== 'STUDENT' ? (
               <>
                 <Item
                   title="Student Violations"

@@ -181,7 +181,7 @@ const Calendar = () => {
 
   const appointmentDataFetch = async () => {
     let data;
-    if (loginData && loginData?.body.userType !== "STUDENT") {
+    if (loginData && loginData?.body?.userType !== "STUDENT") {
       data = await fetch('/api/appointments', {
         method: "GET",
         headers: {
@@ -408,7 +408,7 @@ const Calendar = () => {
     <Box m="20px">
       <ToastContainer />
       <Header title="Calendar" subtitle="Request New Appointment for Guidance Officer" />
-      {loginData?.body.userType === "STUDENT" ? (
+      {loginData?.body?.userType === "STUDENT" ? (
         <>
           <Button
             sx={{

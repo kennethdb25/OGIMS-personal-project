@@ -334,7 +334,7 @@ const StudentsViolation = () => {
     <Box m="20px">
       <ToastContainer />
       <Header title="Violations" subtitle="List of Student's Violations" />
-      {loginData?.body.userType === "GUIDANCE OFFICER" ? (
+      {loginData?.body?.userType === "GUIDANCE OFFICER" ? (
         <>
           <Button
             sx={{

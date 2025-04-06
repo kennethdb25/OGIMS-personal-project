@@ -11,11 +11,14 @@ import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { LoginContext } from '../../context/Context';
 
 const Dashboard = (props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // eslint-disable-next-line no-unused-vars
+  const { loginData, setLoginData } = useContext(LoginContext);
   const history = useNavigate();
   const onDownloadClick = () => {
     history('/reports');
@@ -35,21 +38,24 @@ const Dashboard = (props) => {
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to Guidance Counseling Management System" />
-
         <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-            onClick={() => onDownloadClick()}
-          >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
+          {loginData?.body?.userType !== 'STUDENT' ? (
+            <>
+              <Button
+                sx={{
+                  backgroundColor: colors.blueAccent[700],
+                  color: colors.grey[100],
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  padding: "10px 20px",
+                }}
+                onClick={() => onDownloadClick()}
+              >
+                <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+                Download Reports
+              </Button>
+            </>
+          ) : null}
         </Box>
       </Box>
 
