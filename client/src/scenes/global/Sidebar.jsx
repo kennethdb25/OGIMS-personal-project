@@ -118,19 +118,13 @@ const Sidebar = (props) => {
           )}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-            {loginData?.body.userType !== 'STUDENT' ? (
-              <>
-                <Item
-
-                  title="Dashboard"
-                  to="/dashboard"
-                  icon={<HomeOutlinedIcon />}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-              </>
-            ) : null}
-
+            <Item
+              title="Dashboard"
+              to="/dashboard"
+              icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
             {loginData?.body.userType !== 'STUDENT' ? (
               <>
                 <Typography

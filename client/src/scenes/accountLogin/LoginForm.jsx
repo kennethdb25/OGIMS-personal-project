@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Row, Col, Button, Typography } from "antd";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import { UserOutlined, LockOutlined, PoweroffOutlined, SyncOutlined } from "@ant-design/icons";
 import { Box, Link } from "@mui/material";
 import useStyles from "./style";
-import { LoginContext } from '../../context/Context';
 
 const { Title } = Typography;
 
@@ -14,7 +13,6 @@ const LoginForm = (props) => {
   const history = useNavigate();
   const [loadings, setLoadings] = useState([]);
   // eslint-disable-next-line no-unused-vars
-  const { loginData, setLoginData } = useContext(LoginContext);
   const { showSignUpForm, LoginValidation } = props;
 
   const enterLoading = (index) => {
@@ -60,8 +58,7 @@ const LoginForm = (props) => {
         localStorage.setItem("accountToken", lastElement.token);
         window.location.reload();
         setTimeout(() => {
-
-          history("/dashboard");
+          history('/dashboard');
         }, 1000);
       }, 3000);
     } else {

@@ -63,11 +63,11 @@ function App() {
       console.log('Verified User');
       setLoginData(res);
       console.log(res);
-      history(loginData?.body?.userType === "STUDENT" ? '/form' : '/dashboard');
+      history('/dashboard');
     }
   };
 
-  async function fetchData() {
+  const fetchData = async () => {
     const data = await fetch('/api/dashboard/count', {
       method: "GET",
       headers: {
@@ -90,7 +90,7 @@ function App() {
     if (res.status === 200) {
       setUpcomingData(upcomingRes.body);
     }
-  }
+  };
 
   useEffect(() => {
     setTimeout(() => {
