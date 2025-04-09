@@ -432,164 +432,110 @@ export const mockPieData = [
 
 export const mockLineData = [
   {
-    id: "japan",
+    id: "Female",
     color: tokens("dark").greenAccent[500],
     data: [
       {
-        x: "plane",
+        x: "cheating",
         y: 101,
       },
       {
-        x: "helicopter",
+        x: "plagiarism",
         y: 75,
       },
       {
-        x: "boat",
+        x: "Hazing",
         y: 36,
       },
       {
-        x: "train",
+        x: "Unauthorized Collab",
         y: 216,
       },
       {
-        x: "subway",
+        x: "Drugs",
         y: 35,
       },
       {
-        x: "bus",
+        x: "Gambling",
         y: 236,
       },
       {
-        x: "car",
+        x: "Sexual assault",
         y: 88,
       },
       {
-        x: "moto",
+        x: "Cyberbullying",
         y: 232,
       },
       {
-        x: "bicycle",
+        x: "Failure to comply",
         y: 281,
       },
       {
-        x: "horse",
+        x: "Fire safety",
         y: 1,
       },
       {
-        x: "skateboard",
+        x: "Forgery",
         y: 35,
       },
       {
-        x: "others",
+        x: "Harassment",
         y: 14,
       },
     ],
   },
   {
-    id: "france",
+    id: "Male",
     color: tokens("dark").blueAccent[300],
     data: [
       {
-        x: "plane",
+        x: "cheating",
         y: 212,
       },
       {
-        x: "helicopter",
+        x: "plagiarism",
         y: 190,
       },
       {
-        x: "boat",
+        x: "Hazing",
         y: 270,
       },
       {
-        x: "train",
+        x: "Unauthorized Collab",
         y: 9,
       },
       {
-        x: "subway",
+        x: "Drugs",
         y: 75,
       },
       {
-        x: "bus",
+        x: "Gambling",
         y: 175,
       },
       {
-        x: "car",
+        x: "Sexual assault",
         y: 33,
       },
       {
-        x: "moto",
+        x: "Cyberbullying",
         y: 189,
       },
       {
-        x: "bicycle",
+        x: "Failure to comply",
         y: 97,
       },
       {
-        x: "horse",
+        x: "Fire safety",
         y: 87,
       },
       {
-        x: "skateboard",
+        x: "Forgery",
         y: 299,
       },
       {
-        x: "others",
+        x: "Harassment",
         y: 251,
-      },
-    ],
-  },
-  {
-    id: "us",
-    color: tokens("dark").redAccent[200],
-    data: [
-      {
-        x: "plane",
-        y: 191,
-      },
-      {
-        x: "helicopter",
-        y: 136,
-      },
-      {
-        x: "boat",
-        y: 91,
-      },
-      {
-        x: "train",
-        y: 190,
-      },
-      {
-        x: "subway",
-        y: 211,
-      },
-      {
-        x: "bus",
-        y: 152,
-      },
-      {
-        x: "car",
-        y: 189,
-      },
-      {
-        x: "moto",
-        y: 152,
-      },
-      {
-        x: "bicycle",
-        y: 8,
-      },
-      {
-        x: "horse",
-        y: 197,
-      },
-      {
-        x: "skateboard",
-        y: 107,
-      },
-      {
-        x: "others",
-        y: 170,
       },
     ],
   },
