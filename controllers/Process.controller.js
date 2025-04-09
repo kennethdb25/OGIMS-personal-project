@@ -1,4 +1,5 @@
 const AppointmentModel = require('../models/AppointmentModel');
+const NotificationModel = require('../models/NotificationModel');
 const RequestFormModel = require('../models/RequestModel');
 const ViolationModel = require('../models/ViolationModel');
 
@@ -33,6 +34,18 @@ const AddRequestForm = async (req, res) => {
     });
 
     const data = await RequestFormDetails.save();
+
+    const notificationDetails = new NotificationModel({
+      studentUserId: userId,
+      requestId: data?._id,
+      title: 'New Request Form',
+      description: 'You have a new Request Form',
+      type: 'Form',
+      adminRead: false,
+      created: new Date()
+    });
+
+    await notificationDetails.save();
     return res.status(200).json({ status: 200, body: data });
   } catch (error) {
     console.log(error);
@@ -101,7 +114,6 @@ const getAppointmentsPerStudent = async (req, res) => {
 const getAllAppointments = async (req, res) => {
   try {
     const allAppointments = await AppointmentModel.find();
-    // console.log(allAppointments);
     return res.status(200).json({ status: 200, body: allAppointments });
   } catch (error) {
     console.log(error);
@@ -126,6 +138,18 @@ const addAnAppointment = async (req, res) => {
     });
 
     const data = await appointmentDetails.save();
+
+    const notificationDetails = new NotificationModel({
+      studentUserId: userId,
+      requestId: data?._id,
+      title: 'New Appointment Scheduled',
+      description: 'You have a new appointment request',
+      type: 'Appointment',
+      adminRead: false,
+      created: new Date()
+    });
+
+    await notificationDetails.save();
     return res.status(200).json({ status: 200, body: data });
   } catch (error) {
     console.log(error);
@@ -212,6 +236,27 @@ const updateViolationStatus = async (req, res) => {
     const changeSuccess = await getViolation.save();
 
     return res.status(200).json({ status: 200, body: changeSuccess });
+  } catch (error) {
+    console.log(error);
+    return res.status(404).json(error);
+  }
+};
+
+const getUnreadNotificationForAdmin = async (req, res) => {
+  try {
+    const getNotificationForAdmin = await NotificationModel.find({ adminRead: false }).sort({ created: -1 });
+    return res.status(200).json({ status: 200, body: getNotificationForAdmin });
+  } catch (error) {
+    console.log(error);
+    return res.status(404).json(error);
+  }
+};
+
+const getUnreadNotificationFOrStudent = async (req, res) => {
+  const id = req.params.studentUserId || "";
+  try {
+    const getNotificationForStudent = await NotificationModel.find({ studentRead: false, studentUserId: id.toString() }).sort({ created: -1 });
+    return res.status(200).json({ status: 200, body: getNotificationForStudent });
   } catch (error) {
     console.log(error);
     return res.status(404).json(error);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Row, Col, Button, Typography } from "antd";
 import { ToastContainer, toast, Bounce } from "react-toastify";
@@ -27,7 +27,7 @@ const LoginForm = (props) => {
         newLoadings[index] = false;
         return newLoadings;
       });
-    }, 1000);
+    }, 2000);
   };
 
   const onFinish = async (values) => {
@@ -166,11 +166,11 @@ const LoginForm = (props) => {
                 type="primary"
                 icon={<PoweroffOutlined />}
                 loading={
-                  loadings[3] && {
+                  loadings[5] && {
                     icon: <SyncOutlined spin />,
                   }
                 }
-                onClick={() => enterLoading(3)}
+                onClick={() => enterLoading(5)}
               >
                 <span style={{ fontSize: "16px" }}>LOGIN</span>
               </Button>

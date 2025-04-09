@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { ReportData } from "../../data/mockData";
@@ -250,8 +250,8 @@ const Reports = () => {
                   renderItem={(item) => (
                     <List.Item key={item.filePath}>
                       <List.Item.Meta
-                        title={<p>{item.filePath.toUpperCase()}</p>}
-                        description={new Date(item.created).toLocaleString()}
+                        title={<p style={{ color: colors.grey[100] }}>{item.filePath.toUpperCase()}</p>}
+                        description={<p style={{ color: colors.grey[100] }}>{new Date(item.created).toLocaleString()}</p>}
                       />
                       <div
                         style={{

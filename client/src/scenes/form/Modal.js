@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Input, Divider, Space, Form, Row, Col, Modal, Typography } from "antd";
 import {
   RollbackOutlined,
@@ -30,7 +30,6 @@ export const ViewDetailsMOdal = (props) => {
 
   const onFinishUpdate = async (values) => {
     values.requestStatus = requestStatusChange;
-    console.log(values);
     const data = await fetch(`/api/requests/status/${viewDetailsData._id}`, {
       method: "PATCH",
       headers: {

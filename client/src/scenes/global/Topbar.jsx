@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, IconButton, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
@@ -11,43 +11,50 @@ import SearchIcon from "@mui/icons-material/Search";
 import { LoginContext } from '../../context/Context';
 import UserProfileModal from './UserProfileModal/UserProfileModal';
 import { List, Badge, App, Avatar, Drawer } from 'antd';
+import VirtualList from 'rc-virtual-list';
 
 const initialNotification = [
   {
     id: 1,
     title: "New Request From",
     description: "You have a new message",
-    read: false
+    read: false,
+    date: '2025-01-27T13:00:10.877+00:00'
   },
   {
     id: 2,
     title: "New Appointment Scheduled",
     description: "You have a new message",
-    read: false
+    read: false,
+    date: '2025-01-27T13:00:10.877+00:00'
   },
   {
     id: 3,
     title: "New Request From",
     description: "You have a new message",
-    read: false
+    read: false,
+    date: '2025-01-27T13:00:10.877+00:00'
   },
   {
     id: 4,
     title: "New Appointment Scheduled",
     description: "You have a new message",
-    read: false
+    read: false,
+    date: '2025-01-27T13:00:10.877+00:00'
   },
   {
     id: 5,
     title: "New Request From",
     description: "You have a new message",
-    read: false
+    read: false,
+    date: '2025-01-27T13:00:10.877+00:00'
   },
   {
     id: 6,
     title: "New Appointment Scheduled",
     description: "You have a new message",
-    read: false
+    read: false,
+    date: '2025-01-27T13:00:10.877+00:00'
   },
 ];
 
@@ -118,7 +125,7 @@ const Topbar = (props) => {
         </IconButton>
         <IconButton onClick={() => setIsNotifDrawerVisible(true)}>
           <Badge count={notificationList?.filter((n) => !n.read).length}>
-            <NotificationsOutlinedIcon />
+            <NotificationsOutlinedIcon style={{ color: colors.grey[100] }} />
           </Badge>
         </IconButton>
         <IconButton onClick={() => setIsModalVisible(true)} >
@@ -142,7 +149,35 @@ const Topbar = (props) => {
         open={isNotifDrawerVisibile}
         height="100%"
       >
-        <List
+        <List>
+          <VirtualList
+            data={initialNotification}
+            height='100%'
+            itemHeight={47}
+            itemKey="email"
+          // onScroll={onScroll}
+          >
+            {item => (
+              <List.Item key={item.id}
+                style={{
+                  cursor: "pointer",
+                  padding: 10,
+                  borderRadius: 5,
+                  marginBottom: 5
+                }}
+                onClick={() => openNotification()}
+              >
+                <List.Item.Meta
+                  avatar={<Avatar icon={<NotificationsOutlinedIcon />} />}
+                  title={item.title}
+                  description={item.description}
+                />
+                <div style={{ color: 'red' }}>New</div>
+              </List.Item>
+            )}
+          </VirtualList>
+        </List>
+        {/* <List
           itemLayout='vertical'
           dataSource={notificationList}
           renderItem={(item) => (
@@ -164,7 +199,7 @@ const Topbar = (props) => {
               {!item.read && <Badge dot />}
             </List.Item>
           )}
-        ></List>
+        ></List> */}
       </Drawer>
     </Box>
   );

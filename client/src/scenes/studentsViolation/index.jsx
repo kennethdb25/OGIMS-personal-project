@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { ViolationData } from './Data';
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import {

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useEffect } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import { Box, useTheme, Button } from "@mui/material";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
@@ -34,6 +34,21 @@ const RequestForm = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
+
+  //Pagination
+  let requestCount = 0;
+  for (var request in requestForms) {
+    if (requestForms.hasOwnProperty(request)) {
+      requestCount++;
+    }
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  const [paginationRequest, setPaginationRequest] = useState({
+    defaultCurrent: 1,
+    pageSize: 6,
+    total: requestCount,
+  });
 
   const getRequestForms = async () => {
     let data;
@@ -395,7 +410,7 @@ const RequestForm = () => {
       <Divider orientation="center" orientationMargin="0" style={{ borderColor: 'blue' }}>
         <Header subtitle="LISTS OF REQUEST" />
       </Divider>
-      <Table columns={columns} dataSource={requestForms} />
+      <Table columns={columns} dataSource={requestForms} pagination={paginationRequest} />
 
       {/* Request Form Drawer  */}
       <Drawer

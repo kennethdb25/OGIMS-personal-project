@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import { AccountTypeData } from './data';
 import { Box, Typography, useTheme } from "@mui/material";
 import { ToastContainer, toast, Bounce } from "react-toastify";

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import AccountLogin from './scenes/accountLogin';
 import Topbar from "./scenes/global/Topbar";
@@ -62,7 +62,6 @@ function App() {
     } else {
       console.log('Verified User');
       setLoginData(res);
-      console.log(res);
       history('/dashboard');
     }
   };
