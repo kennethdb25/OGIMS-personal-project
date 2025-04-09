@@ -98,7 +98,7 @@ const SignUp = (props) => {
                       message: "Please input your last name!",
                     },
                     {
-                      pattern: /^a-zA-Z_ ]+$/,
+                      pattern: /^[a-zA-Z_ ]*$/,
                       message: "Numbers or special character are not allowed",
                     },
                   ]}
