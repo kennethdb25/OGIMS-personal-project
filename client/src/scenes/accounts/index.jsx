@@ -473,7 +473,7 @@ const Accounts = () => {
                     hasFeedback
                     rules={[
                       {
-                        pattern: /^[a-zA-Z]*$/,
+                        pattern: /^[a-zA-Z_ ]*$/,
                         message: "Numbers or special character are not allowed",
                       },
                       {
@@ -502,7 +502,7 @@ const Accounts = () => {
                         message: "Please input your last name!",
                       },
                       {
-                        pattern: /^[a-zA-Z]*$/,
+                        pattern: /^[a-zA-Z_ ]*$/,
                         message: "Numbers or special character are not allowed",
                       },
                     ]}

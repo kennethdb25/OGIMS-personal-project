@@ -69,7 +69,7 @@ const SignUp = (props) => {
                   hasFeedback
                   rules={[
                     {
-                      pattern: /^[a-zA-Z]*$/,
+                      pattern: /^[a-zA-Z_ ]*$/,
                       message: "Numbers or special character are not allowed",
                     },
                     {
