@@ -446,7 +446,7 @@ const StudentsViolation = () => {
                         hasFeedback
                         rules={[
                           {
-                            pattern: /^[a-zA-Z]*$/,
+                            pattern: /^[a-zA-Z_ ]*$/,
                             message: "Numbers or special character are not allowed",
                           },
                           {
@@ -475,7 +475,7 @@ const StudentsViolation = () => {
                             message: "Please input your last name!",
                           },
                           {
-                            pattern: /^[a-zA-Z]*$/,
+                            pattern: /^[a-zA-Z_ ]*$/,
                             message: "Numbers or special character are not allowed",
                           },
                         ]}
