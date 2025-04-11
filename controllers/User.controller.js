@@ -114,7 +114,7 @@ const AccountSignup = async (req, res) => {
 
 const ForgotPasswordVerifyEmail = async (req, res) => {
   try {
-    const getEmail = await AccountModel.findOne({ email: req.params.email });
+    const getEmail = await AccountModel.findOne({ email: req.params.email, userType: 'STUDENT' });
     if (getEmail) {
       return res.status(200).json({
         status: 200,
