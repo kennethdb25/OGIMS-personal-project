@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme();
 const useStyles = makeStyles(() => ({
   forgotPassContainer: {
-    backgroundImage: "url(/home-login.png)",
+    backgroundImage: "url(/bg.png)",
     backgroundPosition: "center",
     backgroundSize: "cover",
     minHeight: "100vh",
@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
       justifyContent: "end",
     },
     [theme.breakpoints.down("md")]: {
-      backgroundImage: "url(/cp-login.png)",
+      backgroundImage: "url(/bg.png)",
       paddingLeft: "0px",
       justifyContent: "center",
     },
